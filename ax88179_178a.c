@@ -867,7 +867,7 @@ static const struct net_device_ops ax88179_netdev_ops = {
 	.ndo_do_ioctl		= ax88179_ioctl,
 	.ndo_set_mac_address	= ax88179_set_mac_addr,
 	.ndo_validate_addr	= eth_validate_addr,
-#if LINUX_VERSION_CODE <= KERNEL_VERSION(3, 2, 0)
+#if LINUX_VERSION_CODE < KERNEL_VERSION(3, 2, 0)
 	.ndo_set_multicast_list	= ax88179_set_multicast,
 #else
 	.ndo_set_rx_mode	= ax88179_set_multicast,
